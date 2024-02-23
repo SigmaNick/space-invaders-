@@ -20,6 +20,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     spaceship_projectile.setFlag(SpriteFlag.AutoDestroy, true)
     pause(200)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+	
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.player1.changeScoreBy(1)
     sprites.destroy(Enemy_Spaceship, effects.spray, 500)
